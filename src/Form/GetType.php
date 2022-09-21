@@ -13,12 +13,12 @@ class GetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Find_City', TextType::class, [
+            ->add('Check_Your_weather', TextType::class, [
                 'attr' => [
                 'placeholder' => 'Type city you look'
                 ]
             ])
-            ->add('save', SubmitType::class)
+            ->add('Find', SubmitType::class)
         ;
     }
 

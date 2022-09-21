@@ -3,27 +3,32 @@
 {% block title %}Hello WeatherAppController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>WeatherApp</h1>
+    <nav class="bg-indigo-700 shadow-lg">
+        <div class="container mx-auto">
+            <div class="sm:flex justify-around">
+                <!-- Site-title  -->
+                <a href="#" class="text-white text-3xl font-bold p-3">WeatherAPP</a>
+            </div>
+        </div>
+    </nav>
 
-    <label>{{ form_start(getForm, {'attr' : {'id' : 'custom_get_form'}}) }}</label>
-        <label> {{ form(getForm) }}</label>
-    <label> {{ form_end(getForm) }}</label>
-
-    <div class="border-2 content-center mt-56 text-center w-72">
-    <div class="mt-4 text-xl text-gray-500"> {{ city }}</div>
-    <div> Temperature: {{ temp }} °C</div>
-        <div> Feels like: {{ feelsLike }} °C</div>
-            <div> Weather conditions: {{ clouds }} </div>
-                <div> pressure: {{ pressure }}</div>
-                    <div> Sunrise: {{ sunrise|date('H:i:s') }}</div>
-                        <div> Sunset: {{ sunset|date('H:i:s') }}</div>
+    <div class="flex flex-col justify-center items-center">
+        <label class="text-3xl">{{ form_start(getForm, {'attr' : {'id' : 'custom_get_form'}}) }}</label>
+            <label> {{ form(getForm) }}</label>
+        <label> {{ form_end(getForm) }}</label>
     </div>
 
-</div>
+    <div class="bg-blue-500 w-full h-full flex flex-col justify-center items-center">
+        <div class="text-3xl p-8 border-t-4 border-amber-500">
+            <div> {{ city }}</div>
+            <div> Temperature: {{ temp }} °C</div>
+            <div> Feels like: {{ feelsLike }} °C</div>
+            <div> Weather conditions: {{ clouds }} </div>
+            <div> Pressure: {{ pressure }} hPa</div>
+            <div> Sunrise: {{ sunrise|date('H:i:s') }}</div>
+            <div> Sunset: {{ sunset|date('H:i:s') }}</div>
+        </div>
+    </div>
+
 {% endblock %}
